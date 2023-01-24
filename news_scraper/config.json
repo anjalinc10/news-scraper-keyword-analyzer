@@ -1,0 +1,7 @@
+{
+  "themes_and_keywords": {
+    "events": ["COVID-19", "coronavirus", "virus", "pandemic", "social", "justice", "racism", "Earnings"],
+    "positive":["contribution", "donation", "support", "promote", "promoting", "commitment", "opening", "reopening"] ,
+    "negative": ["cancelled", "disruptions", "suspend", "suspended", "cancellation", "decrease", "closed", "loss"]
+  }
+}
