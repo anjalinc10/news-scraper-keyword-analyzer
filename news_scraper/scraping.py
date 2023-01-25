@@ -6,7 +6,6 @@ import lxml
 import json
 from datetime import datetime
 
-
 def get_article_urls(website_url):
     # get the HTML content of the website and parse it using BeautifulSoup
     source = requests.get(website_url).text
@@ -83,7 +82,6 @@ def get_page_metadata(url):
     page_metadata['posted_date'] = time_div[len(time_div) - 1].text
     return page_metadata
 
-
 def plot_keyword_freq_bargraph(keyword_freq):
     """ This function takes keyword freq dictionary object as input and plot
     bar-graph using matplotlib library and returns matplotlib.pyplot object """
@@ -127,7 +125,7 @@ def run_scraping_and_kw_analysis(url, output_filename):
     tokens = clean_and_tokenize_text(text)
     if len(tokens) < 200:
         print("Skipping the article as number of words in the article are less than 200")
-        return
+        return None
 
     # calculate keyword frequency
     keyword_freq = calculate_keyword_frequency(tokens, keyword_themes)
@@ -138,4 +136,5 @@ def run_scraping_and_kw_analysis(url, output_filename):
     bar_graph.savefig(output_filename)
     print(f"Processing completed, Bar graph is plotted and saved to {output_filename} in output directory ")
     # bar_graph.show()
+    return output_filename
 
